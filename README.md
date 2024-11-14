@@ -175,4 +175,49 @@ print(report.low_stock(3))
 #i struggled with using github as well as abstraction in the info method in furnicher
 #the outline that was provided was of great help
 
+#code structure
++-------------------+       +-----------------+       +-----------------+
+|   Furnicher       |       |    Inventory    |       |     Report      |
++-------------------+       +-----------------+       +-----------------+
+| - id: int         |<----->| - furnichers: []|<----->| - inventory: obj|
+| - name: str       |       +-----------------+       +-----------------+
+| - category: str   |       | + add_furnicher()|       | + low_stock()    |
+| - attributes: dict|       | + remove_furnicher() |    | + get_report()   |
+| - quantity: int   |       | + get_furnicher()|       +-----------------+
++-------------------+       | + furnicher_list()|        
+                           | + update_inventory() |
+                           | + stock()             |
+                           +---------------------+
+                               
++------------------+    
+|      User        |
++------------------+
+| - username: str  |
+| - role: str      |
++------------------+
+| + login()        |
+| + permissions()  |
+| + inventory_actions()|
++------------------+
+
+#flowchart
+  +---------------+
+  |   User Logs   |
+  |    In         |
+  +---------------+
+         |
+  +------v------+
+  | Check Role  |
+  +------v------+
+         |
+  +------v------+
+  |   Admin?    | <-----------+ 
+  +------v------+
+    Yes   |   No
+    |     |
+  +---v-----+  +------------+
+  | Inventory |  | View Stock|
+  | Actions   |  |  & Reports|
+  +-----------+  +------------+
+
  
