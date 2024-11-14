@@ -1,0 +1,49 @@
+1. Description of the Project
+The project is a Furniture Inventory Management System designed to manage and track various types of furniture in a store or warehouse. The system allows for the addition, removal, and inventory management of different pieces of furniture. It also provides a report generation feature to track furniture stock, highlighting low-stock items. The system supports different user roles (admin and limited users) and provides functionality for both inventory management and reporting.
+
+2. Overview of the Project
+The system is structured around the following key classes:
+
+Furnicher: Represents individual furniture items with attributes like ID, name, category, attributes (size, color, material), and quantity.
+Inventory: Manages a list of furnitures, supporting operations like adding and removing items, updating quantities, and retrieving individual furniture details.
+Report: Generates reports, such as identifying low-stock items and summarizing overall stock levels.
+User: Manages user authentication and role-based permissions (admin or limited access).
+The project utilizes object-oriented programming principles (OOP) to organize the data and functionality. Lists, dictionaries, and string formatting techniques are used for data manipulation and reporting.
+
+3. Consideration of Type Specificity
+The Furnicher class requires attributes like ID (int), name (str), category (str), attributes (dict), and quantity (int), ensuring that furniture data is stored with the appropriate type.
+The Inventory class works primarily with lists to store instances of Furnicher. The addition and removal of furnitures are handled by manipulating this list.
+The Report class generates a report based on the furniture list stored in the Inventory. It uses the quantity and attributes of Furnicher instances to filter and generate low-stock reports.
+The User class uses role-based logic (str) for permissions, ensuring proper access control over inventory operations.
+
+4. Brief Summary of Developed Classes
+Furnicher: Holds details about each piece of furniture, including attributes like ID, name, category, material, size, color, and quantity. Includes methods for updating stock and retrieving information.
+
+Inventory: Manages a collection of furnitures. Provides methods for adding/removing items, updating quantities, and listing all furnitures.
+
+Report: Generates reports like listing low-stock items and provides an overall report of the inventory.
+
+User: Handles user authentication and role-based permissions. Admin users can manage the inventory, while non-admin users have limited access.
+
+5. Instructions on How to Use the System
+Creating Users:
+
+To create a new user, instantiate a User object with a username and role.
+Example: admin_user = User("admin", "admin")
+Login:
+
+Use the login() method to verify user credentials. Example: admin_user.login("admin", "password")
+Admin Operations:
+
+Admins can add or remove furniture using inventory_actions().
+Example: admin_user.inventory_actions("add", furnicher1) adds furnicher1 to the inventory.
+Generate Report:
+
+Use the Report class to generate low-stock and full stock reports. Example: report.low_stock(3) returns furnitures with less than 3 items in stock.
+6. Verification of Code Validity
+Validity is ensured by checking the stock levels of items, adding/removing furnitures, and generating accurate reports. The system correctly reflects updates made to inventory.
+7. Sample Scenarios
+Adding Books: Not applicable, as the system is for furniture management.
+Checking Out Books: Not applicable.
+Generating Reports:
+report.low_stock(3) outputs a list of items with low
