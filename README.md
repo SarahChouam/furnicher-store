@@ -170,10 +170,7 @@ inventory.add_furnicher(furnicher2) #add furnicher2
 print(report.low_stock(3)) 
 
 
-###i've used classes, methods, functions and data structures(lists, dicttionaries), 
-# as well as string formating, OOP and loops.
-#i struggled with using github as well as abstraction in the info method in furnicher
-#the outline that was provided was of great help
+
 
 #code structure
 +-------------------+       +-----------------+       +-----------------+
