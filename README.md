@@ -148,10 +148,11 @@ class User:
                 inventory.remove_furnicher(furnicher.id) 
 
  
+#object to recall the class
+inventory = Inventory() 
 
-inventory = Inventory() #object to recall the class
-
-report = Report(inventory) #object to recall the class
+#object to recall the class
+report = Report(inventory) 
 
  
 
@@ -159,12 +160,13 @@ furnicher1 = Furnicher( id= 1, name= "bed", category= "bedroom furnicher", attri
 
 furnicher2= Furnicher( id= 2, name= "chair", category= "dining room furnicher", attributes= {"color": "white, black, dark brown", "material":"oak"}, quantity= 1) 
 
- 
+ #add furnicher1 
 
-inventory.add_furnicher(furnicher1) #add furnicher1 
+inventory.add_furnicher(furnicher1) 
 
-inventory.add_furnicher(furnicher2) #add furnicher2
+#add furnicher2
 
+inventory.add_furnicher(furnicher2) 
  
 
 print(report.low_stock(3)) 
